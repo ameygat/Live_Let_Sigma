@@ -1,0 +1,17 @@
+description: Nextron Preset Responses for Aurora Lite - Ransomware Focus
+id: 75fe2da6-353b-451f-b09c-24cace2be74b
+group: aurora-lite
+response:
+  type: predefined
+  action: kill
+  lowprivonly: true
+  ancestors: all
+  recursive: true
+rule-ids:
+  # Removal of recovery options: 
+  - 'c947b146-0abc-4c87-9c64-b17e9d7274a2'  # Shadow Copies Deletion Using Operating Systems Utilities
+  - '89f75308-5b1b-4390-b2d8-d6b2340efaf8'  # Wbadmin Delete Systemstatebackup
+  - '1444443e-6757-43e4-9ea4-c8fc705f79a2'  # Modification of Boot Configuration
+  # Entry vectors: malicious documents, stage1 loaders etc.
+  - '438025f9-5856-4663-83f7-52f878a70a50'  # Microsoft Office Product Spawning Windows Shell
+  - 'ca2092a1-c273-4878-9b4b-0d60115bf5ea'  # Suspicious Encoded PowerShell Command Line

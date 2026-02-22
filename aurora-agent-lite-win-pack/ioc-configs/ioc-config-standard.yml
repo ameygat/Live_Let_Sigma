@@ -1,0 +1,48 @@
+filename:
+    processcreationimage:
+        source: WinEventLog:Microsoft-Windows-Kernel-Process/WINEVENT_KEYWORD_PROCESS
+        field: Image
+    processcreationcmdline:
+        source: SystemLogger:Process
+        field: CommandLine
+    imageload:
+        source: WinEventLog:Microsoft-Windows-Kernel-Process/WINEVENT_KEYWORD_IMAGE
+        field: ImageLoaded
+    driverload:
+        source: WinEventLog:Microsoft-Windows-Kernel-PnP/DriverLoad
+        field: ImageLoaded
+    filecreation:
+        source: WinEventLog:Microsoft-Windows-Kernel-File/KERNEL_FILE_KEYWORD_CREATE_NEW_FILE
+        field: TargetFilename
+    handlepolling:
+        source: PollHandles
+        field: Name
+        condition:
+            Type: File
+pipe:
+    handlepolling:
+        source: PollHandles
+        field: Name
+        condition:
+            Type: Pipe
+handle:
+    handlepolling_mutex:
+        source: PollHandles
+        field: Name
+        condition:
+            Type: Mutant
+    handlepolling_event:
+        source: PollHandles
+        field: Name
+        condition:
+            Type: Event
+domain:
+    dnsrequest:
+        source: WinEventLog:Microsoft-Windows-DNS-Client
+        field: QueryName
+    httpconnect:
+        source: WinEventLog:Microsoft-Windows-WinINet/WININET_KEYWORD_HANDLES
+        field: ServerName
+    tcpconnect:
+        source: WinEventLog:Microsoft-Windows-TCPIP/ut:ConnectPath
+        field: DestinationIp

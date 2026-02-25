@@ -9,17 +9,21 @@ Files used in Sigma Rules Workshop: Live and Let Sigma
 
 ## How to setup the VM for testing
 
-- Setup Windows 10 Virtual machine in any of your prefered Virtulization Environment
-- Install 7zip , notepad++ (Or any other editor you support YAML syntax hightlight)
-- Copy and extract all archives to C:\ folder
-- Add following line at the end of C:\Windows\System32\drivers\etc\hosts file
+1. Setup Windows 10 Virtual machine in any of your prefered Virtulization Environment
+2. Install 7zip , notepad++ (Or any other editor you support YAML syntax hightlight)
+3. If you are Lazy then just download and install https://github.com/ameygat/Live_Let_Sigma/blob/main/live_let_sigma_setup_0.1.exe then you can skip to Step 6. Otherwise follow step 4,5 manually
+4. Copy and extract all archives to C:\ folder
+5. Add following line at the end of C:\Windows\System32\drivers\etc\hosts file
   `127.0.0.1       attacker.com`
-- Install python 3.14.2 or higher version in Windows 10 VM
-- Run command python -m pip install -r C:\sigma_test_repo\requirements.txt
-- Register for Aurora Lite agent at https://www.nextron-systems.com/aurora/
-- Confirm Email and then login with same account
-- Just download License file and copy it to the folder C:\aurora-agent-lite-win-pack\
-- Now you are ready to create and test sigma rule files
+6. Install python 3.14.2 or higher version in Windows 10 VM
+7. Run command python -m pip install -r C:\sigma_test_repo\requirements.txt
+8. Register for Aurora Lite agent at https://www.nextron-systems.com/aurora/
+9. Confirm Email and then login with same account
+10. Just download License file and copy it to the folder C:\aurora-agent-lite-win-pack\
+11. Now you are ready to create and test sigma rule files
+
+## Detail steps and Important Slides Handout
+Below is brief steps in Readme, if you want slides handout see the file https://github.com/ameygat/Live_Let_Sigma/blob/main/Handouts_Live_and_Let_Sigma.pdf
 
 ## Command to start the Custom Aurora Agent
 
